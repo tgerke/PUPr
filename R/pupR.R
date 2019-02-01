@@ -2,7 +2,7 @@
 #'
 #' Your daily dose of PUP!
 #'
-#' @return A random track from PUP is served to you to click in the Console
+#' @return A random track from PUP is served to you
 #'
 #' @importFrom rvest html_nodes html_attr
 #' @importFrom stringr str_detect str_c
@@ -47,6 +47,7 @@ PUPr <- function(){
 
 str_exclude <- function(string, pattern) {
   string[!stringr::str_detect(string, pattern)]
+}
 
 embed_track <- function(track_url) {
   track <- read_html(track_url)
