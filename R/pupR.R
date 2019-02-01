@@ -18,7 +18,9 @@ PUPr <- function(){
   urls <- dream %>%
     html_nodes("a") %>%
     html_attr("href")
-  dreamtracks <- urls[which(str_detect(urls, 'track') & !str_detect(urls, 'action'))] %>%
+  dreamtracks <- urls %>%
+    str_subset("track") %>%
+    str_exclude("action") %>%
     unique() %>%
     str_c("https://puptheband.bandcamp.com", .)
 
@@ -27,7 +29,9 @@ PUPr <- function(){
   urls <- pup %>%
     html_nodes("a") %>%
     html_attr("href")
-  puptracks <- urls[which(str_detect(urls, 'track') & !str_detect(urls, 'action'))] %>%
+  puptracks <- urls %>%
+    str_subset("track") %>%
+    str_exclude("action") %>%
     unique() %>%
     str_c("https://puptheband.bandcamp.com", .)
 
@@ -39,3 +43,7 @@ PUPr <- function(){
   print(sample(urls, size = 1))
 }
 
+
+str_exclude <- function(string, pattern) {
+  string[!stringr::str_detect(string, pattern)]
+}
