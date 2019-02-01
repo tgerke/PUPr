@@ -8,8 +8,12 @@ Description: Do you love R? Do you love PUP? Then you're going to love this pack
     It serves you up a random track from the world's greatest punk rock band.
     The package is based on amazing work from Melissa Innerst in the pupR package: https://github.com/melissanjohnson/pupR
 Imports:
-  stringr,
-  rvest
+    stringr,
+    rvest,
+    magrittr,
+    xml2,
+    htmltools,
+    purrr
 Encoding: UTF-8
 License: GPL-2
 LazyData: true
