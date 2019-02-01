@@ -4,17 +4,15 @@
 #'
 #' @return A random track from PUP is served to you to click in the Console
 #'
-#' @importFrom rvest read_html html_nodes html_attr
+#' @importFrom rvest html_nodes html_attr
 #' @importFrom stringr str_detect
+#' @importFrom xml2 read_html
 #'
 #' @examples
 #' PUPr()
 #'
 #' @export
 PUPr <- function(){
-  library(rvest)
-  library(stringr)
-
   # parse album the dream is over and get track links
   dream <- read_html("https://puptheband.bandcamp.com/album/the-dream-is-over")
   urls <- dream %>%

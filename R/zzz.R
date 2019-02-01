@@ -1,6 +1,6 @@
 .onAttach <- function(libname, pkgname) {
 
-  packageStartupMessage('Welcome to pupR! Pictures taken from pixabay.com')
+  packageStartupMessage('Welcome to PUPr!')
 
   # return
   invisible(TRUE)
