@@ -5,7 +5,7 @@
 #' @return A random track from PUP is served to you
 #'
 #' @importFrom rvest html_nodes html_attr
-#' @importFrom stringr str_detect str_c
+#' @importFrom stringr str_detect str_c str_subset
 #' @importFrom xml2 read_html
 #'
 #' @examples
